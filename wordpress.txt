@@ -1,0 +1,26 @@
+mysql> select * from wp_options where option_value = 'http://www.domain1.com/wordpress';
++-----------+---------+-------------+---------------------------------+----------+
+| option_id | blog_id | option_name | option_value                    | autoload |
++-----------+---------+-------------+---------------------------------+----------+
+|         1 |       0 | siteurl     | http://www.domain1.com/wordpress | yes      |
++-----------+---------+-------------+---------------------------------+----------+
+1 row in set (0.00 sec)
+
+mysql> update wp_options set option_value = 'http://www.domain2.com' where option_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from wp_options where option_value = 'http://www.domain1.com/wordpress';
+Empty set (0.00 sec)
+
+mysql> select * from wp_options where option_value = 'http://www.domain2.com.com';
++-----------+---------+-------------+------------------------+----------+
+| option_id | blog_id | option_name | option_value           | autoload |
++-----------+---------+-------------+------------------------+----------+
+|         1 |       0 | siteurl     | http://www.domain2.com | yes      |
++-----------+---------+-------------+------------------------+----------+
+1 row in set (0.00 sec)
+
+mysql>exit
+Bye
+user@server:~$

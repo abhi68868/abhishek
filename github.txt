@@ -1,0 +1,17 @@
+or create a new repository on the command line
+
+echo "# abhishek" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/abhi68868/abhishek.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/abhi68868/abhishek.git
+git push -u origin master
+
+
+
+ update wp_options set option_value = 'http://www.domain2.com' where option_id = 1;
